@@ -28,10 +28,6 @@ class HelloWorldMaster(Script):
         Execute("rm -f " + self.server_pid_file)       
 
     def start(self, env):
-        import params
-        env.set_params(params)
-        self.configure(env)
-        
         # Start your service
         print 'Start Hello World'
         Execute("systemctl start hello-world.service")
