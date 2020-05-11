@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<metainfo>
+  <schemaVersion>2.0</schemaVersion>
+  <services>
+    <service>
+      <name>HELLO_WORLD</name>
+      <displayName>Hello World Service</displayName>
+      <comment>Hello World Sample Service</comment>
+      <version>1.1</version>
+      <components>
+        <component>
+          <name>HELLO_WORLD_SERVER</name>
+          <displayName>Hello World Server</displayName>
+          <category>MASTER</category>
+          <cardinality>1</cardinality>
+          <commandScript>
+            <script>scripts/hello_world.py</script>
+            <scriptType>PYTHON</scriptType>
+            <timeout>600</timeout>
+          </commandScript>
+        </component>
+      </components>
+      <osSpecifics>
+        <osSpecific>
+          <osFamily>redhat6,redhat7</osFamily>
+          <packages>
+            <package>
+              <name>hello-world</name>
+            </package>
+          </packages>
+        </osSpecific>
+      </osSpecifics>
+      <commandScript>
+        <script>scripts/service_check.py</script>
+        <scriptType>PYTHON</scriptType>
+        <timeout>300</timeout>
+      </commandScript>
+    </service>
+  </services>
+</metainfo>
